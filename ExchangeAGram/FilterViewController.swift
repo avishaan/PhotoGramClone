@@ -16,6 +16,8 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
   
   let kIntensity = 0.7
   
+  var context:CIContext = CIContext(options: nil)
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -96,6 +98,22 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
     vignette.setValue(kIntensity*30, forKey: kCIInputRadiusKey)
     
     return [blur, instant, noir, transfer, unsharpen, monochrome, colorControls, sepia, colorClamp, composite, vignette]
+  }
+  
+  // take image data and filter instance and get back UIImage
+  func filteredImageFromImage(imageData: NSData, filter: CIFilter) -> UIImage {
+    
+    let unfilteredImage = CIImage(data: imageData)
+    filter.setValue(unfilteredImage, forKey: kCIInputImageKey)
+    let filteredImage:CIImage = filter.outputImage
+    
+    // determine the rect of the image
+    let extent = filteredImage.extent()
+    // bitmap image using our filtered image and the extent, makes it optimized
+    let cgImage:CGImageRef = context.createCGImage(filteredImage, fromRect: extent)
+    
+    let finalImage = UIImage(CGImage: cgImage)
+    return finalImage!;
   }
   
 }
