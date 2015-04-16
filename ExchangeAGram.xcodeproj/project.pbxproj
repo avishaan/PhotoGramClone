@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		822B19401AD2425D008A72A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822B193F1AD2425D008A72A8 /* AppDelegate.swift */; };
 		822B19431AD2425D008A72A8 /* ExchangeAGram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 822B19411AD2425D008A72A8 /* ExchangeAGram.xcdatamodeld */; };
-		822B19451AD2425D008A72A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822B19441AD2425D008A72A8 /* ViewController.swift */; };
 		822B19481AD2425D008A72A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 822B19461AD2425D008A72A8 /* Main.storyboard */; };
 		822B194A1AD2425D008A72A8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 822B19491AD2425D008A72A8 /* Images.xcassets */; };
 		822B194D1AD2425D008A72A8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 822B194B1AD2425D008A72A8 /* LaunchScreen.xib */; };
 		822B19591AD2425D008A72A8 /* ExchangeAGramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822B19581AD2425D008A72A8 /* ExchangeAGramTests.swift */; };
+		822B19631AD243EC008A72A8 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822B19621AD243EC008A72A8 /* FeedViewController.swift */; };
+		822B19651AD2482B008A72A8 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822B19641AD2482B008A72A8 /* FeedCell.swift */; };
+		822B19671AD38546008A72A8 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822B19661AD38546008A72A8 /* MobileCoreServices.framework */; };
+		822B19691AD63727008A72A8 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822B19681AD63727008A72A8 /* FeedItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,13 +34,16 @@
 		822B193E1AD2425D008A72A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		822B193F1AD2425D008A72A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		822B19421AD2425D008A72A8 /* ExchangeAGram.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExchangeAGram.xcdatamodel; sourceTree = "<group>"; };
-		822B19441AD2425D008A72A8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		822B19471AD2425D008A72A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		822B19491AD2425D008A72A8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		822B194C1AD2425D008A72A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		822B19521AD2425D008A72A8 /* ExchangeAGramTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExchangeAGramTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		822B19571AD2425D008A72A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		822B19581AD2425D008A72A8 /* ExchangeAGramTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeAGramTests.swift; sourceTree = "<group>"; };
+		822B19621AD243EC008A72A8 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		822B19641AD2482B008A72A8 /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		822B19661AD38546008A72A8 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		822B19681AD63727008A72A8 /* FeedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				822B19671AD38546008A72A8 /* MobileCoreServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +68,7 @@
 		822B19311AD2425D008A72A8 = {
 			isa = PBXGroup;
 			children = (
+				822B19661AD38546008A72A8 /* MobileCoreServices.framework */,
 				822B193C1AD2425D008A72A8 /* ExchangeAGram */,
 				822B19551AD2425D008A72A8 /* ExchangeAGramTests */,
 				822B193B1AD2425D008A72A8 /* Products */,
@@ -80,11 +88,13 @@
 			isa = PBXGroup;
 			children = (
 				822B193F1AD2425D008A72A8 /* AppDelegate.swift */,
-				822B19441AD2425D008A72A8 /* ViewController.swift */,
+				822B19621AD243EC008A72A8 /* FeedViewController.swift */,
+				822B19641AD2482B008A72A8 /* FeedCell.swift */,
 				822B19461AD2425D008A72A8 /* Main.storyboard */,
 				822B19491AD2425D008A72A8 /* Images.xcassets */,
 				822B194B1AD2425D008A72A8 /* LaunchScreen.xib */,
 				822B19411AD2425D008A72A8 /* ExchangeAGram.xcdatamodeld */,
+				822B19681AD63727008A72A8 /* FeedItem.swift */,
 				822B193D1AD2425D008A72A8 /* Supporting Files */,
 			);
 			path = ExchangeAGram;
@@ -215,8 +225,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				822B19451AD2425D008A72A8 /* ViewController.swift in Sources */,
 				822B19401AD2425D008A72A8 /* AppDelegate.swift in Sources */,
+				822B19651AD2482B008A72A8 /* FeedCell.swift in Sources */,
+				822B19631AD243EC008A72A8 /* FeedViewController.swift in Sources */,
+				822B19691AD63727008A72A8 /* FeedItem.swift in Sources */,
 				822B19431AD2425D008A72A8 /* ExchangeAGram.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
