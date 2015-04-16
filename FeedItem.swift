@@ -2,7 +2,7 @@
 //  FeedItem.swift
 //  ExchangeAGram
 //
-//  Created by Brown Magic on 4/9/15.
+//  Created by Brown Magic on 4/15/15.
 //  Copyright (c) 2015 codeHatcher. All rights reserved.
 //
 
@@ -14,5 +14,6 @@ class FeedItem: NSManagedObject {
 
     @NSManaged var caption: String
     @NSManaged var image: NSData
+    @NSManaged var thumbnail: NSData
 
 }

@@ -10,22 +10,26 @@
 	<string>ExchangeAGram</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>AB6E5151A53A5A592184ED805F441B1B3192CC75</key>
+		<string>github.com:codeHatcher/PhotoGramClone.git</string>
 		<key>E037564209F4271640D11215AB04FFA8916AF6F2</key>
 		<string>github.com:codeHatcher/iOSPirateGame.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>bitfountain/ExchangeAGram/ExchangeAGram.xcodeproj</string>
+	<string>ExchangeAGram.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>AB6E5151A53A5A592184ED805F441B1B3192CC75</key>
+		<string>../..</string>
 		<key>E037564209F4271640D11215AB04FFA8916AF6F2</key>
 		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>github.com:codeHatcher/iOSPirateGame.git</string>
+	<string>github.com:codeHatcher/PhotoGramClone.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>E037564209F4271640D11215AB04FFA8916AF6F2</string>
+	<string>AB6E5151A53A5A592184ED805F441B1B3192CC75</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -34,7 +38,15 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>E037564209F4271640D11215AB04FFA8916AF6F2</string>
 			<key>IDESourceControlWCCName</key>
-			<string>Code</string>
+			<string>..</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>AB6E5151A53A5A592184ED805F441B1B3192CC75</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ExchangeAGram</string>
 		</dict>
 	</array>
 </dict>
