@@ -43,6 +43,8 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
     // Dispose of any resources that can be recreated.
   }
   
+  // UICollectionViewDataSource
+  
   func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return 2
   }
@@ -53,6 +55,21 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
     cell.imageView.image = UIImage(named: "Placeholder")
     
     return cell
+  }
+  
+  // Helper Function
+  
+  // return array of Image View filter instances
+  func photoFilters() -> [CIFilter] {
+    // filter instances
+    let blur = CIFilter(name: "CIGaussianBlur")
+    let instant = CIFilter(name: "CIPhotoEffectInstant")
+    let noir = CIFilter(name: "CIPhotoEffectNoir")
+    let transfer = CIFilter(name: "CIPhotoEffectTransfer")
+    let unsharpen = CIFilter(name: "CIUnsharpMask")
+    let monochrome = CIFilter(name: "CIColorMonochrome")
+    
+    return []
   }
   
 }
