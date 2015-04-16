@@ -138,4 +138,16 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
     return cell
   }
   
+  // UICollectionViewDelegate
+  
+  func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    let thisItem = feedArray[indexPath.row] as FeedItem
+    var filterVC = FilterViewController()
+    filterVC.thisFeedItem = thisItem
+    
+    // present on the screen, we are inside UINavication controller stack
+    self.navigationController?.pushViewController(filterVC, animated: false)
+  }
+  
+  
 }

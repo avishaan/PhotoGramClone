@@ -17,6 +17,8 @@
 		822B19651AD2482B008A72A8 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822B19641AD2482B008A72A8 /* FeedCell.swift */; };
 		822B19671AD38546008A72A8 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822B19661AD38546008A72A8 /* MobileCoreServices.framework */; };
 		822B19691AD63727008A72A8 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822B19681AD63727008A72A8 /* FeedItem.swift */; };
+		826DA1DC1ADF3AFF009423D0 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826DA1DB1ADF3AFF009423D0 /* FilterViewController.swift */; };
+		826DA1DE1ADF462C009423D0 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826DA1DD1ADF462C009423D0 /* FilterCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		822B19641AD2482B008A72A8 /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		822B19661AD38546008A72A8 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		822B19681AD63727008A72A8 /* FeedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
+		826DA1DB1ADF3AFF009423D0 /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		826DA1DD1ADF462C009423D0 /* FilterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +93,9 @@
 			children = (
 				822B193F1AD2425D008A72A8 /* AppDelegate.swift */,
 				822B19621AD243EC008A72A8 /* FeedViewController.swift */,
+				826DA1DB1ADF3AFF009423D0 /* FilterViewController.swift */,
 				822B19641AD2482B008A72A8 /* FeedCell.swift */,
+				826DA1DD1ADF462C009423D0 /* FilterCell.swift */,
 				822B19461AD2425D008A72A8 /* Main.storyboard */,
 				822B19491AD2425D008A72A8 /* Images.xcassets */,
 				822B194B1AD2425D008A72A8 /* LaunchScreen.xib */,
@@ -225,6 +231,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				826DA1DE1ADF462C009423D0 /* FilterCell.swift in Sources */,
+				826DA1DC1ADF3AFF009423D0 /* FilterViewController.swift in Sources */,
 				822B19401AD2425D008A72A8 /* AppDelegate.swift in Sources */,
 				822B19651AD2482B008A72A8 /* FeedCell.swift in Sources */,
 				822B19631AD243EC008A72A8 /* FeedViewController.swift in Sources */,
@@ -423,6 +431,7 @@
 				822B195E1AD2425D008A72A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		822B195F1AD2425D008A72A8 /* Build configuration list for PBXNativeTarget "ExchangeAGramTests" */ = {
 			isa = XCConfigurationList;
@@ -431,6 +440,7 @@
 				822B19611AD2425D008A72A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
