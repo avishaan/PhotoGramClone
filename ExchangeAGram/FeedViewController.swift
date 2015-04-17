@@ -92,6 +92,7 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     // convert to jpg and return NSData instance
     let imageData = UIImageJPEGRepresentation(image, 1.0)
+    let thumbnailData = UIImageJPEGRepresentation(image, 0.1)
     
     // create the feeditem
     // get from appDelete
@@ -103,6 +104,7 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
     // setup feeditem and save it
     feedItem.image = imageData
     feedItem.caption = "Test Caption"
+    feedItem.thumbnail = thumbnailData
 
     // save feedItem
     (UIApplication.sharedApplication().delegate as AppDelegate).saveContext()
