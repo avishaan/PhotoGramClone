@@ -66,7 +66,7 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
     let filterQueue:dispatch_queue_t = dispatch_queue_create("filter queue", nil)
     dispatch_async(filterQueue, { () -> Void in
       // will eval following when processor has space
-      let filterImage = self.filteredImageFromImage(self.thisFeedItem.image, filter: self.filters[indexPath.row])
+      let filterImage = self.filteredImageFromImage(self.thisFeedItem.thumbnail, filter: self.filters[indexPath.row])
       // get back to the main thread
       dispatch_async(dispatch_get_main_queue(), { () -> Void in
         cell.imageView.image = filterImage
