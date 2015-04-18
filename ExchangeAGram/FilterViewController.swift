@@ -153,5 +153,20 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
       UIImageJPEGRepresentation(image, 1.0).writeToFile(uniquePath, atomically: true)
     }
   }
-  
+  func getCachedImage (imageNumber:Int) -> UIImage {
+    let fileName = "/(imageNumber)"
+    let uniquePath = tmp.stringByAppendingPathComponent(fileName)
+    var image:UIImage
+    
+    // make sure file exists before trying to get it
+    if NSFileManager.defaultManager().fileExistsAtPath(uniquePath) {
+      image = UIImage(contentsOfFile: uniquePath)!
+    } else {
+      // cache doesn't exist, go ahead and cache it
+      self.cacheImage(imageNumber)
+      image = UIImage(contentsOfFile: uniquePath)!
+    }
+    
+    return image
+  }
 }
