@@ -64,23 +64,39 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
   func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
     
     let cell:FilterCell = collectionView.dequeueReusableCellWithReuseIdentifier("MyCell", forIndexPath: indexPath) as FilterCell
-    if cell.imageView.image == nil {
       // cell imageView doesn't have an image then go ahead and render. this prevents re-render during scrolling
-      cell.imageView.image = placeHolderImage
-      
-      // create a processing queue
-      let filterQueue:dispatch_queue_t = dispatch_queue_create("filter queue", nil)
-      dispatch_async(filterQueue, { () -> Void in
-        // will eval following when processor has space
-        let filterImage = self.filteredImageFromImage(self.thisFeedItem.thumbnail, filter: self.filters[indexPath.row])
-        // get back to the main thread
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-          cell.imageView.image = filterImage
-        })
+    cell.imageView.image = placeHolderImage
+    
+    // create a processing queue
+    let filterQueue:dispatch_queue_t = dispatch_queue_create("filter queue", nil)
+    dispatch_async(filterQueue, { () -> Void in
+      // will eval following when processor has space
+      // get the image from cache
+      let filterImage = self.getCachedImage(indexPath.row)
+      // get back to the main thread
+      dispatch_async(dispatch_get_main_queue(), { () -> Void in
+        cell.imageView.image = filterImage
       })
-    }
+    })
     
     return cell
+  }
+  
+  // UI CollectionViewDelegate
+  
+  func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    let filterImage = self.filteredImageFromImage(self.thisFeedItem.image, filter: self.filters[indexPath.row])
+    
+    // create some image data
+    let imageData = UIImageJPEGRepresentation(filterImage, 1.0)
+    self.thisFeedItem.image = imageData
+    // update thumbnail
+    let thumbnailData = UIImageJPEGRepresentation(filterImage, 0.1)
+    self.thisFeedItem.thumbnail = thumbnailData
+    
+    // save/persist to the file system
+    (UIApplication.sharedApplication().delegate as AppDelegate).saveContext()
+    self.navigationController?.popViewControllerAnimated(true)
   }
   
   // Helper Function
@@ -154,7 +170,7 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
     }
   }
   func getCachedImage (imageNumber:Int) -> UIImage {
-    let fileName = "/(imageNumber)"
+    let fileName = "\(imageNumber)"
     let uniquePath = tmp.stringByAppendingPathComponent(fileName)
     var image:UIImage
     

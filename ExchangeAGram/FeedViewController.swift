@@ -30,6 +30,17 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
     
   }
   
+  override func viewDidAppear(animated: Bool) {
+    // get back all the feed item instances
+    let request = NSFetchRequest(entityName: "FeedItem")
+    // get access app delegate instance
+    let appDelegate:AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
+    let context:NSManagedObjectContext = appDelegate.managedObjectContext!
+    feedArray = context.executeFetchRequest(request, error: nil)!
+    
+    collectionView.reloadData()
+  }
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
