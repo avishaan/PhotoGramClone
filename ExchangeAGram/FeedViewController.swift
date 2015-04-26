@@ -56,6 +56,10 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
   // Pass the selected object to the new view controller.
   }
   */
+  @IBAction func profileTapped(sender: UIBarButtonItem) {
+    // we want to segue to the profile
+    self.performSegueWithIdentifier("profileSegue", sender: nil)
+  }
   @IBAction func snapBarButtonItemTapped(sender: UIBarButtonItem) {
     // check to see if the camera is available, not avail in the simulator
     if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
