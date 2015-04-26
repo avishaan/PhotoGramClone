@@ -8,14 +8,21 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, FBLoginViewDelegate {
   
   @IBOutlet weak var profileImageView: UIImageView!
   @IBOutlet weak var nameLabel: UILabel!
+  @IBOutlet weak var fbLoginView: FBLoginView!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
     // Do any additional setup after loading the view.
+    
+    // this will allow the delegate to call the below functions
+    self.fbLoginView.delegate = self
+    // persmission we want facebook to give us access to
+    self.fbLoginView.readPermissions = ["public_profile", "publish_actions"]
   }
   
   override func didReceiveMemoryWarning() {
@@ -24,14 +31,24 @@ class ProfileViewController: UIViewController {
   }
   
   
-  /*
-  // MARK: - Navigation
-  
-  // In a storyboard-based application, you will often want to do a little preparation before navigation
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-  // Get the new view controller using segue.destinationViewController.
-  // Pass the selected object to the new view controller.
+  func loginViewShowingLoggedInUser(loginView: FBLoginView!) {
+    // unhide the image and label
+    profileImageView.hidden = false
+    nameLabel.hidden = false
   }
-  */
+  
+  func loginViewFetchedUserInfo(loginView: FBLoginView!, user: FBGraphUser!) {
+    
+  }
+  
+  func loginViewShowingLoggedOutUser(loginView: FBLoginView!) {
+    // hide image and label upon logout
+    profileImageView.hidden = true
+    nameLabel.hidden = true
+  }
+  
+  func loginView(loginView: FBLoginView!, handleError error: NSError!) {
+    
+  }
   
 }
