@@ -17,6 +17,7 @@
 		822B19651AD2482B008A72A8 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822B19641AD2482B008A72A8 /* FeedCell.swift */; };
 		822B19671AD38546008A72A8 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822B19661AD38546008A72A8 /* MobileCoreServices.framework */; };
 		825A26321AEB5455006F3B39 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A26311AEB5455006F3B39 /* ProfileViewController.swift */; };
+		825A26341AEB5B73006F3B39 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825A26331AEB5B73006F3B39 /* FacebookSDK.framework */; };
 		826DA1DC1ADF3AFF009423D0 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826DA1DB1ADF3AFF009423D0 /* FilterViewController.swift */; };
 		826DA1DE1ADF462C009423D0 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826DA1DD1ADF462C009423D0 /* FilterCell.swift */; };
 		826DA1E01ADF6578009423D0 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826DA1DF1ADF6578009423D0 /* FeedItem.swift */; };
@@ -47,6 +48,8 @@
 		822B19641AD2482B008A72A8 /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		822B19661AD38546008A72A8 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		825A26311AEB5455006F3B39 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		825A26331AEB5B73006F3B39 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		825A26351AEB5CAB006F3B39 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		826DA1DB1ADF3AFF009423D0 /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		826DA1DD1ADF462C009423D0 /* FilterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
 		826DA1DF1ADF6578009423D0 /* FeedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedItem.swift; path = ../FeedItem.swift; sourceTree = "<group>"; };
@@ -58,6 +61,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				822B19671AD38546008A72A8 /* MobileCoreServices.framework in Frameworks */,
+				825A26341AEB5B73006F3B39 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,7 +78,6 @@
 		822B19311AD2425D008A72A8 = {
 			isa = PBXGroup;
 			children = (
-				822B19661AD38546008A72A8 /* MobileCoreServices.framework */,
 				822B193C1AD2425D008A72A8 /* ExchangeAGram */,
 				822B19551AD2425D008A72A8 /* ExchangeAGramTests */,
 				822B193B1AD2425D008A72A8 /* Products */,
@@ -97,6 +100,7 @@
 				822B19621AD243EC008A72A8 /* FeedViewController.swift */,
 				826DA1DB1ADF3AFF009423D0 /* FilterViewController.swift */,
 				825A26311AEB5455006F3B39 /* ProfileViewController.swift */,
+				825A26351AEB5CAB006F3B39 /* Bridging-Header.h */,
 				822B19641AD2482B008A72A8 /* FeedCell.swift */,
 				826DA1DD1ADF462C009423D0 /* FilterCell.swift */,
 				826DA1E11ADF6587009423D0 /* Model */,
@@ -112,6 +116,8 @@
 		822B193D1AD2425D008A72A8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				825A26331AEB5B73006F3B39 /* FacebookSDK.framework */,
+				822B19661AD38546008A72A8 /* MobileCoreServices.framework */,
 				822B193E1AD2425D008A72A8 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -374,9 +380,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/avi/Documents/FacebookSDK,
+				);
 				INFOPLIST_FILE = ExchangeAGram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ExchangeAGram/Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -384,9 +395,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/avi/Documents/FacebookSDK,
+				);
 				INFOPLIST_FILE = ExchangeAGram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ExchangeAGram/Bridging-Header.h";
 			};
 			name = Release;
 		};
