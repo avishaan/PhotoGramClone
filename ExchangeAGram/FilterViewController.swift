@@ -204,6 +204,19 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
   func shareToFacebook (indexPath:NSIndexPath) {
     // get back the filtered image
     let filterImage = self.filteredImageFromImage(self.thisFeedItem.image, filter: self.filters[indexPath.row])
+    // don't worry about why this is an NSArray vs Array, NSArray is Obj-c and facebook wants this
+    let photos:NSArray = [filterImage]
+    var params = FBPhotoParams()
+    params.photos = photos
+    
+    FBDialogs.presentShareDialogWithPhotoParams(params, clientState: nil) { (call, result, error) -> Void in
+      // code here runs after call to FBhandler finishes
+      if (result? != nil) {
+        println(result)
+      } else {
+        println(error)
+      }
+    }
   }
   
   // caching functions
