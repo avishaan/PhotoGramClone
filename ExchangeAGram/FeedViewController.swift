@@ -23,11 +23,16 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
     super.viewDidLoad()
     
     // Do any additional setup after loading the view.
+    
+    // setup location related items
     locationManager = CLLocationManager()
     locationManager.delegate = self
     locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    // request permissions
+    locationManager.requestAlwaysAuthorization()
     locationManager.distanceFilter = 100.0
     locationManager.startUpdatingLocation()
+    
     
     // get back all the feed item instances
     let request = NSFetchRequest(entityName: "FeedItem")
