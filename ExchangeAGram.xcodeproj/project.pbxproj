@@ -17,6 +17,7 @@
 		822B19651AD2482B008A72A8 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822B19641AD2482B008A72A8 /* FeedCell.swift */; };
 		822B19671AD38546008A72A8 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822B19661AD38546008A72A8 /* MobileCoreServices.framework */; };
 		823D53D61AEEE83F009B5579 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823D53D51AEEE83F009B5579 /* MapViewController.swift */; };
+		823D53D81AEEEBFB009B5579 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 823D53D71AEEEBFB009B5579 /* MapKit.framework */; };
 		825A26321AEB5455006F3B39 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A26311AEB5455006F3B39 /* ProfileViewController.swift */; };
 		825A26341AEB5B73006F3B39 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825A26331AEB5B73006F3B39 /* FacebookSDK.framework */; };
 		826DA1DC1ADF3AFF009423D0 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826DA1DB1ADF3AFF009423D0 /* FilterViewController.swift */; };
@@ -49,6 +50,7 @@
 		822B19641AD2482B008A72A8 /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		822B19661AD38546008A72A8 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		823D53D51AEEE83F009B5579 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		823D53D71AEEEBFB009B5579 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		825A26311AEB5455006F3B39 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		825A26331AEB5B73006F3B39 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		825A26351AEB5CAB006F3B39 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				823D53D81AEEEBFB009B5579 /* MapKit.framework in Frameworks */,
 				822B19671AD38546008A72A8 /* MobileCoreServices.framework in Frameworks */,
 				825A26341AEB5B73006F3B39 /* FacebookSDK.framework in Frameworks */,
 			);
@@ -119,6 +122,7 @@
 		822B193D1AD2425D008A72A8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				823D53D71AEEEBFB009B5579 /* MapKit.framework */,
 				825A26331AEB5B73006F3B39 /* FacebookSDK.framework */,
 				822B19661AD38546008A72A8 /* MobileCoreServices.framework */,
 				822B193E1AD2425D008A72A8 /* Info.plist */,

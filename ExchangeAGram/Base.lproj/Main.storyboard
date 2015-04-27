@@ -121,7 +121,7 @@
                         <outlet property="fbLoginView" destination="GxK-F3-hpb" id="f5g-zl-qCA"/>
                         <outlet property="nameLabel" destination="Wpn-KZ-gTJ" id="pQ9-Jo-cU4"/>
                         <outlet property="profileImageView" destination="Gl5-Ao-cnG" id="EpY-br-9NV"/>
-                        <segue destination="eKF-fo-dy5" kind="show" id="lSN-od-ubT"/>
+                        <segue destination="eKF-fo-dy5" kind="show" identifier="mapSegue" id="lSN-od-ubT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a4a-MA-Bbg" userLabel="First Responder" sceneMemberID="firstResponder"/>

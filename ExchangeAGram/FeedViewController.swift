@@ -9,6 +9,7 @@
 import UIKit
 import MobileCoreServices
 import CoreData
+import MapKit
 
 class FeedViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
   
