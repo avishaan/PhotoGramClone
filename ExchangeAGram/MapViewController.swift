@@ -29,6 +29,23 @@ class MapViewController: UIViewController {
     let itemArray = context.executeFetchRequest(request, error: &error)
     println(error)
     
+    if (itemArray!.count > 0) {
+      for item in itemArray! {
+        // generate coordinate from the itemArray
+        let location = CLLocationCoordinate2DMake(Double(item.latitude), Double(item.longitude))
+        let span = MKCoordinateSpanMake(0.05, 0.05)
+        let region = MKCoordinateRegionMake(location, span)
+        // should refactor so it doesn't only focus on last pin added
+        mapView.setRegion(region, animated: true)
+        
+        let annotation = MKPointAnnotation()
+        annotation.setCoordinate(location)
+        annotation.title = item.caption
+        
+        mapView.addAnnotation(annotation)
+      }
+    }
+    
 //    let location = CLLocationCoordinate2D(latitude: 48.868639224587, longitude: 2.37119161036255)
 //    // determine how much map to show
 //    let span = MKCoordinateSpanMake(0.05, 0.05)
