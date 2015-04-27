@@ -105,6 +105,15 @@
                                 <rect key="frame" x="50" y="300" width="200" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPN-25-3RY">
+                                <rect key="frame" x="16" y="219" width="126" height="30"/>
+                                <state key="normal" title="Map View">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="mapViewButtonTapped:" destination="xhZ-LM-9f7" eventType="touchUpInside" id="XBz-HL-yR5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -112,11 +121,38 @@
                         <outlet property="fbLoginView" destination="GxK-F3-hpb" id="f5g-zl-qCA"/>
                         <outlet property="nameLabel" destination="Wpn-KZ-gTJ" id="pQ9-Jo-cU4"/>
                         <outlet property="profileImageView" destination="Gl5-Ao-cnG" id="EpY-br-9NV"/>
+                        <segue destination="eKF-fo-dy5" kind="show" id="lSN-od-ubT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a4a-MA-Bbg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2069" y="277"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="Cio-al-5nB">
+            <objects>
+                <viewController id="eKF-fo-dy5" customClass="MapViewController" customModule="ExchangeAGram" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mEu-oM-cQZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="5js-kj-vbr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qpc-3q-AaL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="H42-LY-Qtz">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="H42-LY-Qtz" id="57e-1n-G1K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BcA-eV-fBu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2749" y="275"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kSR-dt-9zq">
