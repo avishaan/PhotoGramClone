@@ -164,13 +164,20 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
     }
     
     let photoAction = UIAlertAction(title: "Post Photo to Facebook with Caption", style: UIAlertActionStyle.Destructive) { (UIAlertAction) -> Void in
-      self.saveFilterToCoreData(indexPath)
+      
+      var text = textField.text
+      
+      self.shareToFacebook(indexPath)
+      self.saveFilterToCoreData(indexPath, caption: text)
     }
     
     alert.addAction(photoAction)
     
     let saveFilterAction = UIAlertAction(title: "Save Filter without Posting to Facebook", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in
-      self.saveFilterToCoreData(indexPath)
+      
+      var text = textField.text
+      
+      self.saveFilterToCoreData(indexPath, caption: text)
     }
     
     // add action to the alert
@@ -185,7 +192,7 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
     self.presentViewController(alert, animated: true, completion: nil)
   }
   
-  func saveFilterToCoreData (indexPath:NSIndexPath) {
+  func saveFilterToCoreData (indexPath:NSIndexPath, caption:String) {
     let filterImage = self.filteredImageFromImage(self.thisFeedItem.image, filter: self.filters[indexPath.row])
     
     // create some image data
@@ -194,6 +201,8 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
     // update thumbnail
     let thumbnailData = UIImageJPEGRepresentation(filterImage, 0.1)
     self.thisFeedItem.thumbnail = thumbnailData
+    // save caption
+    self.thisFeedItem.caption = caption
     
     // save/persist to the file system
     (UIApplication.sharedApplication().delegate as AppDelegate).saveContext()
