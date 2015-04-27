@@ -87,16 +87,17 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
   func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
     let filterImage = self.filteredImageFromImage(self.thisFeedItem.image, filter: self.filters[indexPath.row])
     
-    // create some image data
-    let imageData = UIImageJPEGRepresentation(filterImage, 1.0)
-    self.thisFeedItem.image = imageData
-    // update thumbnail
-    let thumbnailData = UIImageJPEGRepresentation(filterImage, 0.1)
-    self.thisFeedItem.thumbnail = thumbnailData
-    
-    // save/persist to the file system
-    (UIApplication.sharedApplication().delegate as AppDelegate).saveContext()
-    self.navigationController?.popViewControllerAnimated(true)
+    createUIAlertController()
+//    // create some image data
+//    let imageData = UIImageJPEGRepresentation(filterImage, 1.0)
+//    self.thisFeedItem.image = imageData
+//    // update thumbnail
+//    let thumbnailData = UIImageJPEGRepresentation(filterImage, 0.1)
+//    self.thisFeedItem.thumbnail = thumbnailData
+//    
+//    // save/persist to the file system
+//    (UIApplication.sharedApplication().delegate as AppDelegate).saveContext()
+//    self.navigationController?.popViewControllerAnimated(true)
   }
   
   // Helper Function
@@ -152,6 +153,21 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     let finalImage = UIImage(CGImage: cgImage)
     return finalImage!;
+  }
+  
+  // UIAlertController Helper Function
+  
+  func createUIAlertController() {
+    // create instance
+    let alert = UIAlertController(title: "Photo Options", message: "Please choose an option", preferredStyle: UIAlertControllerStyle.Alert)
+    // add a text field to this
+    alert.addTextFieldWithConfigurationHandler { (textField) -> Void in
+      textField.placeholder = "Add Caption!"
+      textField.secureTextEntry = false
+    }
+    
+    // present the alert controller
+    self.presentViewController(alert, animated: true, completion: nil)
   }
   
   // caching functions
