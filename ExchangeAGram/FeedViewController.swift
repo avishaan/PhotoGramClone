@@ -139,6 +139,8 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
     // create unique ident for item
     let UUID = NSUUID().UUIDString
     feedItem.uniqueID = UUID
+    
+    feedItem.filtered = false
 
     // save feedItem
     (UIApplication.sharedApplication().delegate as AppDelegate).saveContext()
@@ -168,6 +170,12 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
     // originally the feedarray is anyObject, we know it is FeedItem
     let thisItem = feedArray[indexPath.row] as FeedItem
     
+    if thisItem.filtered == true {
+      let returnedImage = UIImage(data: thisItem.image)
+      let image = UIImage(CGImage: returnedImage?.CGImage, scale: 1.0, orientation: UIImageOrientation.Right)
+    } else {
+      
+    }
     cell.imageView.image = UIImage(data: thisItem.image)
     cell.captionLabel.text = thisItem.caption
     
